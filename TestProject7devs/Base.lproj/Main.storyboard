@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BB5-IB-V2T">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4JU-9U-FYo">
+            <objects>
+                <navigationController id="BB5-IB-V2T" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cet-pf-DC3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zxT-Pl-Sq4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vA1-hm-9v7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593" y="131"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="SearchViewController" customModule="TestProject7devs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yd9-T1-GRw">
+                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Pzr-9e-8jB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uqs-R9-GxE"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ueD-uj-4x3">
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cN3-Hg-wcW"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yd9-T1-GRw" firstAttribute="top" secondItem="ueD-uj-4x3" secondAttribute="bottom" id="0lu-p4-3tt"/>
+                            <constraint firstAttribute="trailing" secondItem="ueD-uj-4x3" secondAttribute="trailing" id="FKv-Ry-zFg"/>
+                            <constraint firstItem="ueD-uj-4x3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wg8-Fk-HkZ"/>
+                            <constraint firstItem="ueD-uj-4x3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cMn-v6-AkD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yd9-T1-GRw" secondAttribute="bottom" id="cO4-KL-CC2"/>
+                            <constraint firstItem="yd9-T1-GRw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d8T-D0-QRs"/>
+                            <constraint firstAttribute="trailing" secondItem="yd9-T1-GRw" secondAttribute="trailing" id="mOd-qe-OJ0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IyB-nR-jFc"/>
+                    <connections>
+                        <outlet property="searchResultsTableView" destination="yd9-T1-GRw" id="gAP-XX-Yxt"/>
+                        <segue destination="flK-xt-On4" kind="show" identifier="identifier" id="Wdq-Lp-0QQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="130"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="0LX-tF-BBR">
+            <objects>
+                <viewController title="Map" automaticallyAdjustsScrollViewInsets="NO" id="flK-xt-On4" customClass="MapViewController" customModule="TestProject7devs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h7e-Ko-xa1"/>
+                        <viewControllerLayoutGuide type="bottom" id="DKl-m1-CI2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQT-6Z-dJi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Djh-vz-Hzw">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <connections>
+                                    <outlet property="delegate" destination="flK-xt-On4" id="hZs-OU-tcT"/>
+                                </connections>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OWT-Uo-3aD">
+                                <rect key="frame" x="50" y="72" width="314" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeSelected:" destination="flK-xt-On4" eventType="valueChanged" id="gSU-Mh-O1m"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djh-vz-Hzw" firstAttribute="top" secondItem="h7e-Ko-xa1" secondAttribute="bottom" id="a2r-38-1iT"/>
+                            <constraint firstAttribute="trailing" secondItem="OWT-Uo-3aD" secondAttribute="trailing" constant="50" id="cSX-1i-CKR"/>
+                            <constraint firstItem="DKl-m1-CI2" firstAttribute="top" secondItem="Djh-vz-Hzw" secondAttribute="bottom" id="jya-j3-iJ9"/>
+                            <constraint firstItem="OWT-Uo-3aD" firstAttribute="top" secondItem="h7e-Ko-xa1" secondAttribute="bottom" constant="8" id="lxG-Iw-yBn"/>
+                            <constraint firstItem="OWT-Uo-3aD" firstAttribute="leading" secondItem="SQT-6Z-dJi" secondAttribute="leading" constant="50" id="nNg-WP-g7i"/>
+                            <constraint firstItem="Djh-vz-Hzw" firstAttribute="leading" secondItem="SQT-6Z-dJi" secondAttribute="leading" id="pk8-sI-n8Q"/>
+                            <constraint firstAttribute="trailing" secondItem="Djh-vz-Hzw" secondAttribute="trailing" id="xcY-ww-tEe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Djh-vz-Hzw" id="55A-Vx-87p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwh-EW-sXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="131.25"/>
+        </scene>
+    </scenes>
+</document>
