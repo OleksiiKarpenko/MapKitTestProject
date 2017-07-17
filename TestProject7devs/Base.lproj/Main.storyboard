@@ -99,6 +99,7 @@
                                     <segment title="Satellite"/>
                                     <segment title="Hybrid"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="0.33333333329999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="mapTypeSelected:" destination="flK-xt-On4" eventType="valueChanged" id="gSU-Mh-O1m"/>
                                 </connections>

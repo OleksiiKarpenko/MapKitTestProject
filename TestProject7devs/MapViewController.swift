@@ -43,14 +43,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, LocationServiceDel
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
         let sourceAnnotation = MKPointAnnotation()
-        sourceAnnotation.title = "Times Square"
+        sourceAnnotation.title = "Start Point"
         
         if let location = sourcePlacemark.location {
             sourceAnnotation.coordinate = location.coordinate
         }
         
         let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.title = "Empire State Building"
+        destinationAnnotation.title = "End Point"
         
         if let location = destinationPlacemark.location {
             destinationAnnotation.coordinate = location.coordinate
@@ -63,10 +63,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, LocationServiceDel
         directionRequest.destination = destinationMapItem
         directionRequest.transportType = .automobile
         
-        // Calculate the direction
+        // MARK: Calculate the direction
+        
         let directions = MKDirections(request: directionRequest)
         
-        // 8.
         directions.calculate {
             (response, error) -> Void in
             
